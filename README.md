@@ -1,6 +1,6 @@
 # FUSIONPBX-BILLING
 
-Simple billing for the great Fusionpbx https://github.com/fusionpbx/fusionpbx
+Billing for the great multi-tenant IPBX Fusionpbx https://github.com/fusionpbx/fusionpbx
 
 In /var/www/html/fusionpbx
 install the directory "mybilladmin" with all content, customise cfg.php and point your browser to the url
