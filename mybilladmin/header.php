@@ -24,7 +24,7 @@ else
 	<li class="spe"><a href="index.php">MAIN</a></li>
 	<li class="spe"><a href="new_rates.php">RATES</a></li>
 	<li class="spe"><a href="importsql.php">RATES IMPORT</a></li>
-	<li class="spe"><a href=""></a></li>
+ 	<li class="spe"><a href="https://'.$_SERVER['HTTP_HOST'].'">RETURN TO FUSIONPBX</a></li>
 	</ul></center>
 	<br/>
 <table class="rgrey" align="center">
