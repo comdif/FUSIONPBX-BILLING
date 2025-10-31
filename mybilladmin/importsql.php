@@ -28,6 +28,21 @@ require ("header.php");
 $fichier=$_FILES["userfile"]["name"];
 if ($fichier !='')
 	{
+	$allowed_ext = 'csv';
+	$file_ext = strtolower(pathinfo($_FILES["userfile"]["name"], PATHINFO_EXTENSION));
+	if ($file_ext !== $allowed_ext)
+		{
+    	die("Invalid file type. Only .csv files are allowed.");
+		}
+
+	$finfo = finfo_open(FILEINFO_MIME_TYPE);
+	$mime = finfo_file($finfo, $_FILES["userfile"]["tmp_name"]);
+	finfo_close($finfo);
+	$allowed_mimes = ['text/plain', 'text/csv', 'application/vnd.ms-excel'];
+	if (!in_array($mime, $allowed_mimes))
+		{
+    	die("Invalid file format. Only CSV text files are allowed.");
+		}		
 	$fp = fopen ($_FILES["userfile"]["tmp_name"], "r");
 	$empty = "TRUNCATE TABLE `v_routes`";
 	$done = pg_query($dbcon,$empty);
